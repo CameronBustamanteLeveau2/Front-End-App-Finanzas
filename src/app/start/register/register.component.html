@@ -1,0 +1,23 @@
+<div class="logo">
+  <img src="assets/logo.png" alt="Logo FinEdu" />
+  <h1><span class="brand">Fin</span><span class="edu">Edu</span></h1>
+</div>
+
+<div class="form-container">
+  <div class="tabs">
+    <button class="tab" [class.active]="tab === 'registro'" (click)="cambiarTab('registro')">Registrarse</button>
+    <button class="tab" [class.active]="tab === 'login'" (click)="cambiarTab('login')">Inicia sesión</button>
+  </div>
+
+  <form *ngIf="tab === 'registro'" (ngSubmit)="registrar()">
+    <input [(ngModel)]="nombre" name="nombre" type="text" placeholder="Nombre" required />
+    <input [(ngModel)]="email" name="email" type="email" placeholder="E-mail" required />
+    <input [(ngModel)]="password" name="password" type="password" placeholder="Contraseña" required />
+    <button type="submit" class="submit-btn">Registrarse</button>
+  </form>
+
+  <div *ngIf="tab === 'login'">
+    <!-- Aquí puedes agregar el formulario de login en el futuro -->
+    <p style="text-align:center;">Formulario de inicio de sesión en construcción</p>
+  </div>
+</div>
